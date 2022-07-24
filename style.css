@@ -1,0 +1,243 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+@keyframes blink {
+  0% { opacity: 0.1}
+  50% { opacity: 1 }
+  100% { opacity: 0.1 }
+}
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ballot-box {
+  width: 570px;
+  background-color: #dbd5c9;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 2px 8px #888;
+  border-radius: 5px;
+}
+.screen {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 300px;
+  background: linear-gradient(to right, #e8e8e8, #c1c1c1);
+  border: 25px solid #000;
+  margin: auto;
+}
+.keyboard-area {
+  display:flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 245px;
+  padding-right: 30px;
+}
+.ballot-logo {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  color: #ccc;
+  font-size: 25px;
+  text-shadow: 1px 1px 2px #bbb;
+  padding: 10px;
+}
+.logo {
+  display: flex;
+  border: 1px solid #ccc;
+  width: 150px;
+  height: 80px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px #bbb
+}
+.logo img {
+  padding: 21px 10px 10px 10px;
+  width: 45px;
+}
+.logo p {
+  width: 40px;
+  font-size: 20px;
+  text-shadow: 1px 1px 1px #bbb
+}
+.desc {
+  margin-top: 4px;
+  text-align: center;
+  color: #ccc;
+  font-size: 23px;
+  text-shadow: 1px 1px 1px #bbb;
+  box-shadow: 1px 1px 1px #bbb;
+  border: 1px solid #ccc;
+  padding: 2px 0;
+  border-radius: 5px;
+}
+.keyboard {
+  margin-top: 50px;
+}
+.keyboard--line {
+  display: flex;
+  justify-content: center;
+}
+.keyboard--key {
+  width: 40px;
+  height: 28px;
+  background-color: #000;
+  color: #fff;
+  font-size: 22px;
+  margin: 7px;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 #555;
+  padding: 5px;
+  border-radius: 5px;
+}
+.keyboard--line--special {
+  flex-direction: column;
+  font-weight: 700;
+}
+.white-key {
+  width: 75px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  color: #000;
+  font-size: 15px;
+  margin: 10px 0px 15px 10px;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 #aaa;
+  padding: 5px;
+  border-radius: 5px;
+}
+.revise-key {
+  display: flex;
+  justify-content: center;
+  width: 75px;
+  height: 28px;
+  background-color: #f09046;
+  color: #000;
+  font-size: 15px;
+  margin: 10px 0px 15px 10px;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 #c28557;
+  padding: 5px;
+  border-radius: 5px;
+}
+.confirm-key {
+  display: flex;
+  justify-content: center;
+  width: 75px;
+  height: 80px;
+  background-color: #48c079;
+  color: #000;
+  font-size: 17px;
+  margin: 6px 0px 0px 10px;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 #4da070;
+  padding: 15px 5px 0px 5px;
+  border-radius: 5px;
+  font-stretch: condensed;
+}
+.up {
+  flex: 1;
+  display: flex;
+}
+.up-left {
+  display: flex;
+  flex-direction: column;
+  width: 367px;
+  margin: 5px 0 0 3px;
+}
+.up-left-up {
+  font-size: 15px;
+  height: 35px;
+}
+.up-left-charge {
+  display: flex;
+  height: 40px;
+  font-size: 22px;
+  justify-content: center;
+}
+.up-left-numbers {
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  font-size: 27px;
+}
+.number {
+  display: inline-block;
+  width: 30px;
+  height: 34px;
+  border: 1px solid #000;
+  margin-right: 2px;
+  text-align: center;
+  line-height: 34px;
+}
+.blink {
+  animation: blink 1.5s infinite;
+}
+.up-left-desc {
+  flex:1;
+  line-height: 40px;
+}
+.up-right {
+  width: 90px;
+}
+.down {
+  height: 50px;
+  font-size: 14px;
+  border-top: 2px solid #000;
+  padding-top: 2px;
+}
+.up-right-image,
+.up-right-image img {
+  background-color: #E8E3C3;
+  width: 130px;
+  height: 160px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 15px;
+}
+.up-right-image {
+  border: 1px solid #000;
+}
+.up-right-image img {
+  width: 95px;
+  height: 140px;
+}
+.up-right-image.small,
+.up-right-image.small img {
+  background-color: #E8E3C3;
+  width: 100px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 13px;
+}
+.up-right-image.small {
+  height: 115px;  
+  border: 1px solid #000;
+  margin-left: 29px;
+  margin-top: 1px;
+  position: absolute;
+}
+.up-right-image.small img {
+  width: 70px;
+  height: 95px;
+}
+.null--warning {
+  font-size: 40px;
+  animation: blink 0.9s infinite;
+  margin-left: 120px;
+  bottom: 140px;
+  position: absolute;
+}
+.white--warning {
+  font-size: 37px;
+  animation: blink 0.9s infinite;
+  top: 175px;
+  margin-left: 90px;
+  position: absolute;
+
+}

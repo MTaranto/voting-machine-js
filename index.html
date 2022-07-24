@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Urna Eletrônica</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ballot-box">
+    <div class="screen">
+      <div class="up">
+        <div class="up-left">
+          <div class="up-left-up">
+            <span>SEU VOTO PARA</span>
+          </div>
+          <div class="up-left-charge">
+            <span>Vereador</span>
+          </div>
+          <div class="up-left-numbers">
+            <div class="number blink"></div>
+            <div class="number"></div>
+          </div>
+          <div class="up-left-desc">
+            Nome: Fulano de Tal <br>
+            Partido: PPPP <br>
+            Vice-Prefeito: Beltrano Siclano
+          </div>
+        </div>
+        <div class="up-right">
+          <div class="up-right-image">
+            <img src="images/84.jpg" alt="">
+            Prefeito
+          </div>
+          <div class="up-right-image small">
+            <img src="images/84_2.jpg" alt="">
+            Vice-Prefeito
+          </div>
+        </div>
+      </div>
+      <div class="down">
+        &ensp;Aperte a tecla:<br>
+        &ensp;&ensp;&ensp;CONFIRMA para CONFIRMAR este voto<br>
+        &ensp;&ensp;&ensp;&ensp;CORRIGE para REINICIAR este voto
+      </div>
+    </div>
+    <div class="keyboard-area">
+      <div class="ballot-logo">
+        <div class="logo">
+          <div class="logo-img">
+            <img src="images/grey-star.png" alt="Light grey star logo">
+          </div>
+          <p>Justiça Eleitoral</p>
+        </div>
+        <div class="desc">UE2020</div>
+      </div>
+      <div class="keyboard">
+        <div class="keyboard--line">
+          <div class="keyboard--key" onclick="clicked('1')">1</div>
+          <div class="keyboard--key" onclick="clicked('2')">2</div>
+          <div class="keyboard--key" onclick="clicked('3')">3</div>
+        </div>
+        <div class="keyboard--line">
+          <div class="keyboard--key" onclick="clicked('4')">4</div>
+          <div class="keyboard--key" onclick="clicked('5')">5</div>
+          <div class="keyboard--key" onclick="clicked('6')">6</div>
+        </div>
+        <div class="keyboard--line">
+          <div class="keyboard--key" onclick="clicked('7')">7</div>
+          <div class="keyboard--key" onclick="clicked('8')">8</div>
+          <div class="keyboard--key" onclick="clicked('9')">9</div>
+        </div>
+        <div class="keyboard--line">
+          <div class="keyboard--key" onclick="clicked('0')">0</div>
+        </div>
+      </div>
+      <div class="keyboard--line--special">
+        <div class="white-key" onclick="white()">BRANCO</div>
+        <div class="revise-key" onclick="revise()">CORRIGE</div>
+        <div class="confirm-key" onclick="vote()">CONFIRMA</div>
+      </div>
+    </div>
+  </div>
+  <script src="stages.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
