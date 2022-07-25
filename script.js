@@ -7,7 +7,6 @@ let aside = document.querySelector('.up-right');
 let numbers = document.querySelector('.up-left-numbers');
 
 // declaring environment controls variables
-
 let currentStage = 0;
 let number = '';
 let whiteVote = false;
@@ -17,8 +16,7 @@ endSound.src = 'sounds/endsound.mp3'
 
 startStage();
 
-// create functions
-
+// creating functions
 function interfaceUpdate() {
   let stage = stages[currentStage];
   let applicant = stage.applicants.filter((item)=>{
@@ -48,9 +46,7 @@ function interfaceUpdate() {
       numbers.innerHTML = '';
       description.innerHTML = `<div class="null--warning">VOTO NULO</div>`
       warning.style.display = 'block';
-
   }
-  console.log('Candidato', applicant);
 }
 
 function startStage() {
@@ -58,8 +54,6 @@ function startStage() {
   let numberHtml = '';
   number = '';
   whiteVote = false;
-
-  
   for(let i=0;i<stage.numbers;i++) {
     if(i===0) {
       numberHtml += '<div class="number blink"></div>'
@@ -80,7 +74,6 @@ function clicked(n) {
   if(elNumber !== null) {
     elNumber.innerHTML = n;
     number = `${number}${n}`;
-
     elNumber.classList.remove('blink');
     if(elNumber.nextElementSibling !== null) {
       elNumber.nextElementSibling.classList.add('blink'); // search for the next element
@@ -89,6 +82,7 @@ function clicked(n) {
     }
   }
 }
+
 function white() {
   if(number==='') {
     whiteVote = true;
@@ -100,13 +94,13 @@ function white() {
     alert('Para votar em BRANCO o campo de voto deve estar vazio. Aperte CORRIGE para apagar o campo de voto.')
   }
 }
+
 function revise() {
   startStage();  
 }
 function vote() {
   let stage = stages[currentStage];
   let confirmedVote = false;
-
   if(whiteVote===true) {
     confirmedVote = true;
     votes.push({
