@@ -11,6 +11,9 @@ let numbers = document.querySelector('.up-left-numbers');
 let currentStage = 0;
 let number = '';
 let whiteVote = false;
+let votes = [];
+let endSound = new Audio();
+endSound.src = 'sounds/endsound.mp3' 
 
 startStage();
 
@@ -32,13 +35,18 @@ function interfaceUpdate() {
     warning.style.display = 'block';
     let picturesHtml = '';
       for(let i in applicant.pictures) {
+        if(applicant.pictures[i].small) {
+          picturesHtml += `<div class="up-right-image small"><img src="${applicant.pictures[i].url}" alt="">${applicant.pictures[i].legend}</div>`;
+        } else {
         picturesHtml += `<div class="up-right-image"><img src="${applicant.pictures[i].url}" alt="">${applicant.pictures[i].legend}</div>`;
-      } 
+        }
+      }
     aside.innerHTML = picturesHtml;
     } else {
       applicant = applicant[0];
       seuVotoPara.style.display = 'block';
-      description.innerHTML = `NÚMERO ERRADO<br><br><div class="null--warning">VOTO NULO</div>`
+      numbers.innerHTML = '';
+      description.innerHTML = `<div class="null--warning">VOTO NULO</div>`
       warning.style.display = 'block';
 
   }
@@ -97,16 +105,39 @@ function revise() {
 }
 function vote() {
   let stage = stages[currentStage];
+  let confirmedVote = false;
 
   if(whiteVote===true) {
-    console.log('Branco confirmado');
+    confirmedVote = true;
+    votes.push({
+      stage: stages[currentStage].title,
+      vote: 'white'
+    });
   } else if(number.length===stage.numbers) {
-    console.log('Voto confirmado '+number);
+    confirmedVote = true;
+    votes.push({
+      stage: stages[currentStage].title,
+      vote: number
+    });
   } else if(number.length===2) {
-    alert('Você esta votando na Legenda '+number)
-  }
-  {
+    confirmedVote = true;
+    votes.push({
+      stage: stages[currentStage].title,
+      vote: number,
+      legend: true
+    });
+    alert('Você esta votando na Legenda   '+number)
+  } else {
     alert('Para CONFIRMAR é necessário digitar pelo menos o número do partido ou votar em BRANCO.')
   }
-  
+  if(confirmedVote) {
+    endSound.play();
+    currentStage++;
+    if(stages[currentStage] !== undefined) {
+      startStage();
+    } else {
+      document.querySelector('.screen').innerHTML = `<div class="end--warning">FIM</div>`
+      console.log(votes);
+    }
+  }
 }

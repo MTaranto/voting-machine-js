@@ -42,7 +42,7 @@ let stages = [
         Vice: 'Maria das Dores',
         pictures: [
           {url: 'images/84.jpg', legend: 'Prefeito'},
-          {url: 'images/84_2.jpg', legend: 'Vice-Prefeita'}
+          {url: 'images/84_2.jpg', legend: 'Vice-Prefeita', small: true}
         ]
       },
     ]

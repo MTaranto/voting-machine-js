@@ -207,8 +207,7 @@ body {
   width: 95px;
   height: 140px;
 }
-.up-right-image.small,
-.up-right-image.small img {
+.up-right-image.small {
   background-color: #E8E3C3;
   width: 100px;
   text-align: center;
@@ -230,7 +229,7 @@ body {
   font-size: 40px;
   animation: blink 0.9s infinite;
   margin-left: 120px;
-  bottom: 140px;
+  top: 175px;
   position: absolute;
 }
 .white--warning {
@@ -239,5 +238,17 @@ body {
   top: 175px;
   margin-left: 90px;
   position: absolute;
-
+}
+.end--warning {
+  font-size: 170px;
+  top: 125px;
+  margin-left: 100px;
+  position: absolute;
+}
+aside {
+  margin-left: 150px;
+  padding: 10px;
+  border: 2px double black;
+  border-radius: 5px;
+  background-color: lightgreen;
 }
